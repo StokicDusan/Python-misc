@@ -1,6 +1,3 @@
-from math import sqrt
-from math import fabs
-from decimal import Decimal
 from time import clock
 
 

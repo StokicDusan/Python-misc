@@ -2,7 +2,7 @@
 
 Amicable numbers are two different numbers related in such a way that the sum of the proper divisors of each is equal to the other number.
 
-## What does the scripts do?
+## What does the script do?
 The script prints amicable numbers on the command line.
 
 ## `amicableNumbers.py`
@@ -11,7 +11,7 @@ This script is ready to use script to takes an input and calculates all amicable
 ## Installing the dependencies
 
 ### Used packages
-This script require the math package.
+This script require the math and time package.
 
 ## How to use it
 #### 1. Clone this repository:
