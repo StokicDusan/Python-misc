@@ -15,7 +15,7 @@ This script require no additional packages.
 #### 1. Clone this repository:
 ```zsh
 $> git clone https://github.com/StokicDusan/Python-misc.git
-$> cd python-misc/AmicableNumbers/
+$> cd Python-misc/AmicableNumbers/
 ```
 #### 2. Launch:
 In the command line simply invoke the script with:
