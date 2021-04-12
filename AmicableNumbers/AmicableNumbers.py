@@ -46,7 +46,7 @@ def main():
             if sum_of_divisors(j)==i:
                 L+=[j]
                 print('[',i,' , ',j,']  ')
-        print('Searching(%.2f%%)'%(i*100/k),end="\r")
+#        print('Searching(%.2f%%)'%(i*100/k),end="\r")
     timer.stop()
     print('Done!                 ',end='\r')
     print('\ntime elapsed: %.4f s' %round(timer.elapsed(),4))
