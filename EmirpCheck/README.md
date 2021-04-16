@@ -25,8 +25,6 @@ In the command line simply invoke the script with two arguments:
 ```zsh
 $> python emirpCheck.py argv1
 ```
-```
-* argv1:
-    Any positive integer
-    ⚠ *Note:* Other input will result in an error
-```
+* argv1:  
+Any positive integer  
+:warning: *Note:* Other input will result in an error
