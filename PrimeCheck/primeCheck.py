@@ -24,13 +24,14 @@ def factors(A, x):
 def all_prime_factors(p):
     factors = []
     loop = 2
-    while loop * loop <= p:
-        if p % loop == 0:
-            p //= loop
+    x = p
+    while loop <= x:
+        if x % loop == 0:
+            x //= loop
             factors.append(loop)
         else:
             loop += 1
-#        print('Searching(%.5f%%)' % (100*loop/p), end="\r")
+#        print('Searching(%.5f%%)' % (100*loop/x), end="\r")
     factors.sort()
     print('                           ', end="\r")
     return factors
