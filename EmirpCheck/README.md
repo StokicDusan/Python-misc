@@ -27,4 +27,5 @@ $> python emirpCheck.py argv1
 ```
 * argv1:  
 Any positive integer  
+
 :warning: *Note:* Other input will result in an error
