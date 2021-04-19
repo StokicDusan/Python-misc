@@ -3,7 +3,7 @@
 # lower or equal then the entered number
 
 from math import sqrt
-from time import clock
+from time import perf_counter
 from doctest import testmod
 
 
@@ -13,14 +13,14 @@ class Stopwatch:
 
     def start(self):
         if not self.__running:
-            self.__start_time = clock()
+            self.__start_time = perf_counter()
             self.__running = True
         else:
             print('Stopwatch already running')
 
     def stop(self):
         if self.__running:
-            self.__elapsed += clock()-self.__start_time
+            self.__elapsed += perf_counter()-self.__start_time
             self.__running = False
         else:
             print('Stopwatch not running')
