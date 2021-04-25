@@ -26,14 +26,14 @@ In the command line simply invoke the script with two arguments:
 ```zsh
 $> python countPrimes.py argv1 argv2
 ```
-```
-* argv1:
-    1 - print primes
-    2 - count primes
-    3 - both
-    Note: Other input will result in an error
+* argv1:  
+    | argv1                   | Value |
+    |:------------------------|:-----:|
+    | print primes               | 1 |
+    | count primes               | 2 |
+    | print and count primes     | 3 |
 
-* argv2:
-    Any positive integer
-    Note: Other input will result in an error
-```
+* argv2:  
+Any positive integer  
+
+:warning: *Note:* Other inputs will result in an error

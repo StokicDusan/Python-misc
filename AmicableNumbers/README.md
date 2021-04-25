@@ -11,7 +11,7 @@ This script is ready to use script to takes an input and calculates all amicable
 ## Installing the dependencies
 
 ### Used packages
-This script require the math and time package.
+This script require the math, doctest and time package.
 
 ## How to use it
 #### 1. Clone this repository:
