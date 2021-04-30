@@ -1,6 +1,35 @@
 from math import log2
-from cont import Stopwatch
+from time import perf_counter
 import sys
+
+class Stopwatch:
+    def __init__(self):
+        self.reset()
+
+    def start(self):
+        if not self.__running:
+            self.__start_time = perf_counter()
+            self.__running = True
+        else:
+            print('Stopwatch already running')
+
+    def stop(self):
+        if self.__running:
+            self.__elapsed += perf_counter()-self.__start_time
+            self.__running = False
+        else:
+            print('Stopwatch not running')
+
+    def reset(self):
+        self.__start_time = self.__elapsed = 0
+        self.__running = False
+
+    def elapsed(self):
+        if not self.__running:
+            return self.__elapsed
+        else:
+            print('Stopwatch must be stopped')
+            return None
 
 
 def TCS(yy):

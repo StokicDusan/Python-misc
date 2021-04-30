@@ -2,7 +2,7 @@ from math import sqrt
 import sys
 
 
-def factors(A, x):
+def factors(A: list, x: int) -> None:
     print('%i = ' % x, end="")
     k, i = 0, 0
     while i < len(A):
@@ -21,46 +21,39 @@ def factors(A, x):
     print()
 
 
-def all_prime_factors(p):
-    factors = []
+def all_prime_factors(p: int) -> list:
+    number = p
+    allFactors = []
     loop = 2
     while loop * loop <= p:
         if p % loop == 0:
             p //= loop
-            factors.append(loop)
+            allFactors.append(loop)
         else:
             loop += 1
-#        print('Searching(%.5f%%)' % (100*loop/p), end="\r")
-    factors.sort()
-    print('                           ', end="\r")
-    return factors
+    if p > 1:
+        allFactors.append(p)
+    allFactors.sort()
+    factors(allFactors, number)
 
 
-def is_prime(pp):
-    global com
-    if pp == 1:
+def is_prime(pp: int) -> bool:
+    if pp == 2 or pp == 3:
+        return True
+    elif pp < 2 or not pp % 2:
         return False
-    trial = 2
-    root = sqrt(pp)
-    while trial <= root:
-#        print('Searching(%.5f%%)' % (100*trial/root), end="\r")
-        if pp % trial == 0:
-            print('This number is not prime')
-            com = all_prime_factors(pp)
-            return False
-        trial += 1
-    return True
+
+    odd_n = range(3, int(sqrt(pp) + 1), 2)
+    return not any(not pp % i for i in odd_n)
 
 
 def main(argv):
-    global com
     x = int(argv)
     if is_prime(x):
         print('This number is Prime!!!')
     else:
-        factors(com, x)
+        all_prime_factors(x)
 
 
-com = []
 if __name__ == "__main__":
     main(sys.argv[1])

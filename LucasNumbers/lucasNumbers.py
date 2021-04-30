@@ -4,8 +4,11 @@
 
 limit = int(input('Display first ? Lucas numbers:'))
 Lucas = [2, 1]
-for i in Lucas:
-    print(i, end=" ")
+Lucas1=2
+Lucas2=1
+print(Lucas1, end=" ")
+print(Lucas2, end=" ")
 for i in range(0, limit-2):
-    print(Lucas[0]+Lucas[1], end=" ")
-    Lucas[i % 2] = Lucas[0]+Lucas[1]
+    print(Lucas1+Lucas2, end=" ")
+    Lucas1,Lucas2 =Lucas2, Lucas1+Lucas2
+
