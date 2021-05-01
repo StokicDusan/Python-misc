@@ -1,4 +1,17 @@
-from func import is_prime
+from math import sqrt
+
+def is_prime(pp: int) -> bool:
+    if pp == 2 or pp == 3:
+        return True
+    elif pp < 2 or not pp % 2:
+        return False
+
+    odd_n = range(3, int(sqrt(pp) + 1), 2)
+    return not any(not pp % i for i in odd_n)
+
+
+def is_palindromic_number(numb: int) -> bool:
+    return numb == int(str(numb)[::-1])
 
 
 def is_Mersenne(v):
