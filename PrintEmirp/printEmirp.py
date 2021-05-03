@@ -1,4 +1,5 @@
 from math import sqrt
+import sys
 
 
 def is_prime(pp: int) -> bool:
@@ -30,20 +31,15 @@ def is_emirp(n) -> bool:
         return False
 
 
-def Continue(n):
-    while(1):
-        x = str(input('continue?(Y\\N) :'))
-        if x.upper() == "N":
-            return 0
-        elif x.upper() == "Y":
-            print()
-            return 1
+def print_emirp(x: int) -> None:
+    for i in range(1, x+1):
+        if is_emirp(i):
+            print(i, end=" ")
 
 
-def main():
-    x = eval(input('Display emirp up to what value?'))
+def print_emirp_count(x: int) -> None:
     xx = 0
-    for i in range(1, x):
+    for i in range(1, x+1):
         if is_emirp(i):
             xx += 1
             print(i, end=" ")
@@ -51,8 +47,8 @@ def main():
     print('There where ', f'{xx:,}', ' emirps')
 
 
-c = 1
-while c:
-    if __name__ == "__main__":
-        main()
-        c = Continue(c)
+
+if __name__ == "__main__":
+    if(sys.argv[1:]):
+        print_emirp(int(sys.argv[1]))
+
