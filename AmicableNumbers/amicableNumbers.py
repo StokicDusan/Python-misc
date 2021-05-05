@@ -5,6 +5,7 @@
 from math import sqrt
 from time import perf_counter
 from doctest import testmod
+import sys
 
 
 class Stopwatch:
@@ -37,12 +38,17 @@ class Stopwatch:
             return None
 
 
-def sum_of_divisors(n):
-    """
-    Returns the sum of all
-    true divisors (and 1)
-    for n > 1
-    """
+def is_prime(pp: int) -> bool:
+    if pp == 2 or pp == 3:
+        return True
+    elif pp < 2 or not pp % 2:
+        return False
+
+    odd_n = range(3, int(sqrt(pp) + 1), 2)
+    return not any(not pp % i for i in odd_n)
+
+
+def sum_of_divisors(n: int) -> int:
     if is_prime(n):
         return 1
     i = n-1
@@ -53,43 +59,7 @@ def sum_of_divisors(n):
         i -= 1
     return SumOfDivisors
 
-
-def is_prime(pp):
-    """
-    Returns True if pp is prime
-    otherwise, returns False
-    Note: not a very sophisticated check
-    """
-    if pp == 1:
-        return False
-    trial = 2
-    root = sqrt(pp)
-    while trial <= root:
-        if is_prime(trial):
-            if pp % trial == 0:
-                return False
-        trial += 1
-    return True
-
-
-def amicable_numbers(k: int):
-    """
-    >>> amicable_numbers(300)
-    [ 220  ,  284 ]
-    >>> amicable_numbers(3000)
-    [ 220  ,  284 ]
-    [ 1184  ,  1210 ]
-    [ 2620  ,  2924 ]
-    >>> amicable_numbers(5020)
-    [ 220  ,  284 ]
-    [ 1184  ,  1210 ]
-    [ 2620  ,  2924 ]
-    [ 5020  ,  5564 ]
-    >>> amicable_numbers("some text")
-    Traceback (most recent call last):
-        ...
-    TypeError: amicable_numbers accepts only integer arguments.
-    """
+def amicable_numbers(k: int) -> None:
     if not isinstance(k, int):
         raise TypeError("amicable_numbers accepts only integer arguments.")
     L = [1, 2]
@@ -101,7 +71,7 @@ def amicable_numbers(k: int):
                 print('[', i, ' , ', j, ']')
 
 
-def amicable_numbers_time(k: int):
+def amicable_numbers_time(k: int) -> None:
     if not isinstance(k, int):
         raise TypeError("amicable_numbers accepts only integer arguments.")
     timer.start()
@@ -117,11 +87,29 @@ def amicable_numbers_time(k: int):
     print('\ntime elapsed: %.4f s' % round(timer.elapsed(), 4))
     timer.reset()
 
+def test_amicable_numbers():
+    """
+    >>> amicable_numbers(300)
+    [ 220  ,  284 ]
+    >>> amicable_numbers(2620)
+    [ 220  ,  284 ]
+    [ 1184  ,  1210 ]
+    [ 2620  ,  2924 ]
+    >>> amicable_numbers(3000)
+    [ 220  ,  284 ]
+    [ 1184  ,  1210 ]
+    [ 2620  ,  2924 ]
+    >>> amicable_numbers("some text")
+    Traceback (most recent call last):
+        ...
+    TypeError: amicable_numbers accepts only integer arguments.
+    """
+    pass
 
 timer = Stopwatch()
 
 if __name__ == "__main__":
-    testmod()
-    k = eval(input('Search for Amicable numbers up to:\n').strip())
-    print('Prints out pairs of amicable numbers without time elapsed:')
-    amicable_numbers(k)
+    if(sys.argv[1:]):
+        amicable_numbers(int(sys.argv[1]))
+    else:
+        testmod()

@@ -4,7 +4,9 @@
 # different prime when its decimal digits are reversed.
 
 from math import sqrt
+from doctest import testmod
 import sys
+
 
 def is_prime(pp: int) -> bool:
     if pp == 2 or pp == 3:
@@ -35,16 +37,30 @@ def is_emirp(n) -> bool:
         return False
 
 
-def main(argv):
-    x = int(argv)
+def emirp_check(x) -> None:
     if not is_palindromic_number(x):
         if is_emirp(x):
             print('It is an Emirp!')
         else:
             print('It is not an Emirp')
     else:
-        print('It is not an Emirp, palindromes don\'t count\n')
+        print('It is not an Emirp, palindromes don\'t count')
+
+
+def test_emirp_check():
+    """
+    >>> emirp_check(100)
+    It is not an Emirp
+    >>> emirp_check(311)
+    It is an Emirp!
+    >>> emirp_check(12721)
+    It is not an Emirp, palindromes don\'t count
+    """
+    pass
 
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    if(sys.argv[1:]):
+        emirp_check(int(sys.argv[1]))
+    else:
+        testmod()

@@ -1,4 +1,5 @@
 from math import sqrt
+from doctest import testmod
 import sys
 
 
@@ -51,9 +52,8 @@ def mersenne_primes(n: int) -> None:
 def mersenne_primes_format(n: int) -> None:
     value, m = 0, 1
     if n > 0:
-        print(m+1, ': 2**2-1', end="")
+        print(m, ': 2**2-1', end="")
         print('-->', 3, "\n")
-        m += 1
     while(1):
         if m >= n:
             break
@@ -65,6 +65,33 @@ def mersenne_primes_format(n: int) -> None:
                 m += 1
 
 
+def test_mersenne_primes():
+    """
+    >>> mersenne_primes(0)
+
+    >>> mersenne_primes(1)
+    3 
+    >>> mersenne_primes(4)
+    3 7 31 127 
+    >>> mersenne_primes(7)
+    3 7 31 127 8191 131071 524287 
+    >>> mersenne_primes(-20)
+
+    >>> mersenne_primes_format(4)
+    1 : 2**2-1--> 3 
+    <BLANKLINE>
+    2 : 2**3-1--> 7 
+    <BLANKLINE>
+    3 : 2**5-1--> 31 
+    <BLANKLINE>
+    4 : 2**7-1--> 127 
+    <BLANKLINE>
+    """
+    pass
+
+
 if __name__ == "__main__":
     if(sys.argv[1:]):
         mersenne_primes(int(sys.argv[1]))
+    else:
+        testmod()

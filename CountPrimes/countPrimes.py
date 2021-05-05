@@ -1,6 +1,8 @@
 from math import log2
 from time import perf_counter
+from doctest import testmod
 import sys
+
 
 class Stopwatch:
     def __init__(self):
@@ -64,7 +66,7 @@ def mersenne(yy):
                 m += 1
 
 
-def count(pr, max_value):
+def count(pr: int, max_value: int) -> int:
     global x, m, twin, cousin, sexy, mmm, p
     global prime, Mersenne_Primes, timer
     timer.start()
@@ -95,6 +97,18 @@ def count(pr, max_value):
     return max_value
 
 
+def test_main():
+    """
+    >>> main(1,10)
+    2 3 5 7 
+    >>> main(1,15)
+    2 3 5 7 11 13 
+    >>> main(1,17)
+    2 3 5 7 11 13 17 
+    """
+    pass
+
+
 def display(n):
     global x, m, Mersenne_Primes, twin, count, sexy, p, timer
     print('There are', f'{x:,}', 'Primes!!!!')
@@ -115,13 +129,15 @@ def main(argv1, argv2):
     n = count(int(argv1), int(argv2)+1)
     if int(argv1) == 2 or int(argv1) == 3:
         display(n)
-    print()
 
 
 x, m, twin, cousin, sexy, mmm, p = 0, 0, 0, 0, 0, 0, 0
 prime = [3, 5, 7]
 Mersenne_Primes = []
+timer = Stopwatch()
 if __name__ == "__main__":
-    timer = Stopwatch()
-    main(sys.argv[1], sys.argv[2])
+    if(sys.argv[1:] and sys.argv[2:]):
+        main(int(sys.argv[1]), int(sys.argv[2]))
+    else:
+        testmod()
     print()

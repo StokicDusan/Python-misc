@@ -4,6 +4,7 @@
 # https://oeis.org/A006862
 
 from math import sqrt
+from doctest import testmod
 import sys
 
 
@@ -26,7 +27,24 @@ def euclid_numbers(n: int) -> None:
         value += 1
 
 
+def test_euclid_numbers():
+    """
+    >>> euclid_numbers(0)
+    3 
+    >>> euclid_numbers(1)
+    3 7 
+    >>> euclid_numbers(3)
+    3 7 31 211 
+    >>> euclid_numbers(7)
+    3 7 31 211 2311 30031 510511 9699691 
+    >>> euclid_numbers(-20)
+
+    """
+    pass
+
 
 if __name__ == "__main__":
     if(sys.argv[1:]):
         euclid_numbers(int(sys.argv[1]))
+    else:
+        testmod(name="test_euclid_numbers",verbose=True)

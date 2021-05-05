@@ -1,4 +1,5 @@
 from math import sqrt
+from doctest import testmod
 import sys
 
 
@@ -47,8 +48,33 @@ def print_emirp_count(x: int) -> None:
     print('There where ', f'{xx:,}', ' emirps')
 
 
+def test_print_emirp():
+    """
+    >>> print_emirp(0)
+
+    >>> print_emirp(10)
+
+    >>> print_emirp(100)
+    13 17 31 37 71 73 79 97 
+    >>> print_emirp(311)
+    13 17 31 37 71 73 79 97 107 113 149 157 167 179 199 311 
+    >>> print_emirp(-500)
+
+    >>> print_emirp_count(10)
+    <BLANKLINE>
+    There where  0  emirps
+    >>> print_emirp_count(100)
+    13 17 31 37 71 73 79 97 
+    There where  8  emirps
+    >>> print_emirp_count(311)
+    13 17 31 37 71 73 79 97 107 113 149 157 167 179 199 311 
+    There where  16  emirps
+    """
+    pass
+
 
 if __name__ == "__main__":
     if(sys.argv[1:]):
         print_emirp(int(sys.argv[1]))
-
+    else:
+        testmod()

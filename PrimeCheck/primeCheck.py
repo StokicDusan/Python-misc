@@ -1,4 +1,5 @@
 from math import sqrt
+from doctest import testmod
 import sys
 
 
@@ -47,13 +48,35 @@ def is_prime(pp: int) -> bool:
     return not any(not pp % i for i in odd_n)
 
 
-def main(argv):
-    x = int(argv)
+def prime_check(x: int) -> bool:
     if is_prime(x):
-        print('This number is Prime!!!')
+        return True
     else:
         all_prime_factors(x)
 
 
+def test_prime_check():
+    """
+    >>> prime_check(0)
+    0 = 
+    >>> prime_check(1)
+    1 = 
+    >>> prime_check(7)
+    True
+    >>> prime_check(496)
+    496 = 2^4 * 31
+    >>> prime_check(30030)
+    30030 = 2 * 3 * 5 * 7 * 11 * 13
+    >>> prime_check(5450195689)
+    True
+    >>> prime_check(-20)
+    -20 = 
+    """
+    pass
+
+
 if __name__ == "__main__":
-    main(sys.argv[1])
+    if(sys.argv[1:]):
+        prime_check(int(sys.argv[1]))
+    else:
+        testmod()
