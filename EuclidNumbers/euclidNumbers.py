@@ -1,5 +1,5 @@
 # Euclid numbers are integers of the form En = pn# + 1,
-# where pn# is the nth primorial,
+# where pn# is the nth primordial,
 # i.e. the product of the first n prime numbers.
 # https://oeis.org/A006862
 
