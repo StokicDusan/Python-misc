@@ -13,7 +13,7 @@ This script is ready to use script which uses two arguments to run. The first ar
 ## Installing the dependencies
 
 ### Used packages
-This script require the time, math and sys package.
+This script require the time, math, sys and doctest package.
 
 ## How to use it
 #### 1. Clone this repository:
@@ -37,3 +37,5 @@ $> python countPrimes.py argv1 argv2
 Any positive integer  
 
 :warning: *Note:* Other inputs will result in an error
+
+Invoking the script with no or less arguments will run testmod().

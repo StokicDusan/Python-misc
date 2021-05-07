@@ -12,7 +12,7 @@ This script is ready to use script which uses one arguments to run. The argument
 ## Installing the dependencies
 
 ### Used packages
-This script require the math and sys package.
+This script require the math, sys and doctest package.
 
 ## How to use it
 #### 1. Clone this repository:
@@ -21,7 +21,7 @@ $> git clone https://github.com/StokicDusan/Python-misc.git
 $> cd Python-misc/EmirpCheck/
 ```
 #### 2. Launch:
-In the command line simply invoke the script with two arguments:
+In the command line simply invoke the script with one argument:
 ```zsh
 $> python emirpCheck.py argv1
 ```
@@ -29,3 +29,5 @@ $> python emirpCheck.py argv1
 Any positive integer  
 
 :warning: *Note:* Other input will result in an error
+
+Invoking the script with no or less arguments will run testmod().
