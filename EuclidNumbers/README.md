@@ -1,17 +1,18 @@
 # Euclid Numbers
 
-Euclid numbers are integers of the form En = pn# + 1, where pn# is the n-th primorial (the product of the first n prime numbers.)
+Euclid numbers are integers of the form En = pn# + 1, where pn# is the n-th primordial (the product of the first n prime numbers.)
 
 ## What does the script do?
 The script prints euclid numbers on the command line.
 
 ## `euclidNumbers.py` :
-This script is ready to use script which uses one arguments to run. The argument is the integer passed for the number of numbers to be printed.
+This script is ready to use script which uses one arguments to run. The argument is the integer passed for the number of Euclid numbers in the 
+sequence to be printed.
 
 ## Installing the dependencies
 
 ### Used packages
-This script require no additional packages.
+This script require the math, sys and doctest package.
 
 ## How to use it
 #### 1. Clone this repository:
