@@ -8,7 +8,6 @@ def is_prime(pp: int) -> bool:
         return True
     elif pp < 2 or not pp % 2:
         return False
-
     odd_n = range(3, int(sqrt(pp) + 1), 2)
     return not any(not pp % i for i in odd_n)
 
