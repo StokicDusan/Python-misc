@@ -6,12 +6,24 @@ Lucas Sequence L is a sequence of numbers such that L(n) = L(n-1) + L(n-2)
 The script prints numbers of the Lucas Sequence on the command line or just the last number given the number if iterations.
 
 ## `lucasSequence.py` :
-This script is ready to use script which uses several inputs. The inputs determine whether to print the entire sequence or just the last number, that the values for L(0) and L(1) are and how many iterations to go through.
+This script is ready to use script which uses three arguments. The 
+arguments determine the values for L(0) and L(1) and how many iterations to go through, respectively.
 
+### lucas_sequence:
+Function prints numbers divided by a space character.  
+Invoking the script runs this function.
+### lucas_sequence_timer:
+Function prints numbers divided by a space character and 
+the time taken for the calculation.
+### lucas_sequence_last:
+Function prints the last number in the sequence.
+### lucas_sequence_last_timer:
+Function prints the last number in the sequence and 
+the time taken for the calculation.
 ## Installing the dependencies
 
 ### Used packages
-This script require the time package.
+This script require the time, math, sys and doctest package.
 
 ## How to use it
 #### 1. Clone this repository:
@@ -20,7 +32,16 @@ $> git clone https://github.com/StokicDusan/Python-misc.git
 $> cd Python-misc/LucasSequence/
 ```
 #### 2. Launch:
-In the command line simply invoke the script:
+In the command line simply invoke the script with three arguments:
 ```zsh
-$> python lucasSequence.py
+$> python lucasSequence.py argv1 argv2 argv3 
 ```
+* argv1, argv2:  
+Any integer 
+* argv3:  
+Any positive integer  
+
+:warning: *Note:* Other inputs will result in an error
+
+
+Invoking the script with no or less arguments will run testmod().

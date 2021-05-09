@@ -11,7 +11,7 @@ This script is ready to use script which uses one arguments to run. The argument
 ## Installing the dependencies
 
 ### Used packages
-This script require the math and sys package.
+This script require the math, doctest and sys package.
 
 ## How to use it
 #### 1. Clone this repository:
@@ -28,3 +28,5 @@ $> python primeCheck.py argv1
 Any positive integer  
 
 :warning: *Note:* Other input will result in an error
+
+Invoking the script with no arguments will run testmod().
