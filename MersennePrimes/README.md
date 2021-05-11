@@ -8,10 +8,17 @@ The script prints Mersenne prime numbers on the command line.
 ## `mersennePrimes.py` :
 This script is ready to use script which uses one arguments to run. The argument is the integer passed for the number of primes to be printed.
 
+### mersenne_primes:
+Function prints numbers divided by a space character.  
+Invoking the script runs this function.
+
+### mersenne_primes_format:
+Function prints every number in a new line formatted to display in the $2^n − 1$ form as well.
+
 ## Installing the dependencies
 
 ### Used packages
-This script require the math package.
+This script require the math, doctest and sys package.
 
 ## How to use it
 #### 1. Clone this repository:
@@ -20,7 +27,14 @@ $> git clone https://github.com/StokicDusan/Python-misc.git
 $> cd Python-misc/MersennePrimes/
 ```
 #### 2. Launch:
-In the command line simply invoke the script:
+In the command line simply invoke the script with one argument:
 ```zsh
-$> python mersennePrimes.py
+$> python mersennePrimes.py argv1
 ```
+* argv1:  
+Any positive integer  
+
+:warning: *Note:* Other input will result in an error
+
+
+Invoking the script with no arguments will run testmod().
