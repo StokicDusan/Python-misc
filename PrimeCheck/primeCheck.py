@@ -27,11 +27,12 @@ def all_prime_factors(p: int) -> list:
     allFactors = []
     loop = 2
     while loop * loop <= p:
-        if p % loop == 0:
+        if p % loop:
+            loop += 1
+        else:
             p //= loop
             allFactors.append(loop)
-        else:
-            loop += 1
+            
     if p > 1:
         allFactors.append(p)
     allFactors.sort()
