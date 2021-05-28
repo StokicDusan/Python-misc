@@ -35,8 +35,8 @@ def test_euclid_numbers():
     3 7 
     >>> euclid_numbers(3)
     3 7 31 211 
-    >>> euclid_numbers(7)
-    3 7 31 211 2311 30031 510511 9699691 
+    >>> euclid_numbers(8)
+    3 7 31 211 2311 30031 510511 9699691 223092871 
     >>> euclid_numbers(-20)
 
     """
