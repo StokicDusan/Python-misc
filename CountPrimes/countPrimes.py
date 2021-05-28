@@ -40,26 +40,28 @@ def TCS(yy):
     global cousinPrimeCount, sexyPrimeCount
     if (yy-1)/4 == ((yy-1)/4)//1:
         pythagoreanPrimeCount += 1
-    if (yy+2<=int(sys.argv[2]) and not nonprimes[yy] and not nonprimes[yy+2]):
-            twinPrimeCount += 1
-    if (yy+4<=int(sys.argv[2]) and not nonprimes[yy] and not nonprimes[yy+4]):
-            cousinPrimeCount += 1
-    if (yy+6<=int(sys.argv[2]) and not nonprimes[yy] and not nonprimes[yy+6]):
-            sexyPrimeCount += 1
+    if (yy+2 <= int(sys.argv[2]) and not nonprimes[yy] and not nonprimes[yy+2]):
+        twinPrimeCount += 1
+    if (yy+4 <= int(sys.argv[2]) and not nonprimes[yy] and not nonprimes[yy+4]):
+        cousinPrimeCount += 1
+    if (yy+6 <= int(sys.argv[2]) and not nonprimes[yy] and not nonprimes[yy+6]):
+        sexyPrimeCount += 1
+
 
 def euclid(yy):
     global euclidPrimeCount, Euclid_Primes, nonprimes
     product = 1
     i = 2
-    while (product < yy) :
+    while (product < yy):
         if not nonprimes[i]:
             product = product * i
         if (product + 1 == yy):
             if yy not in Euclid_Primes:
-                euclidPrimeCount+=1
+                euclidPrimeCount += 1
                 Euclid_Primes += [yy]
                 return True
         i += 1
+
 
 def mersenne(yy):
     global mersennePrimeCount, Mersenne_Primes
@@ -125,18 +127,21 @@ def display(n):
     global euclidPrimeCount, Euclid_Primes, timer
     print('There are', f'{allPrimeCount:,}', 'Primes!!!!')
     print('%.3f' % (allPrimeCount*100/n), '% are Primes', sep="")
-    print('There are', f'{mersennePrimeCount:,}', 'Mersenne Primes { Mp=2**p-1 }', end=": ")
+    print('There are', f'{mersennePrimeCount:,}',
+          'Mersenne Primes { Mp=2**p-1 }', end=": ")
     for i in Mersenne_Primes:
         print(i, end=" ")
     print()
-    print('There are', f'{euclidPrimeCount:,}', 'Euclid Primes { Ep=pn#+1 }', end=": ")
+    print('There are', f'{euclidPrimeCount:,}',
+          'Euclid Primes { Ep=pn#+1 }', end=": ")
     for i in Euclid_Primes:
         print(i, end=" ")
     print()
     print('There are', f'{twinPrimeCount:,}', 'Twin Primes')
     print('There are', f'{cousinPrimeCount:,}', 'Cousin Primes')
     print('There are', f'{sexyPrimeCount:,}', 'Sexy Primes')
-    print('There are', f'{pythagoreanPrimeCount:,}', 'Pythagorean Primes { Pp=4n+1 }', end="")
+    print('There are', f'{pythagoreanPrimeCount:,}',
+          'Pythagorean Primes { Pp=4n+1 }', end="")
     print()
     print('Elapsed:', round(timer.elapsed(), 6), 'seconds')
 
@@ -146,13 +151,14 @@ def main(argv1, argv2):
     if int(argv1) == 2 or int(argv1) == 3:
         display(n)
 
-nonprimes=0
-allPrimeCount=0
-mersennePrimeCount=0
-twinPrimeCount=0
-cousinPrimeCount=0
-sexyPrimeCount=0
-euclidPrimeCount=0
+
+nonprimes = 0
+allPrimeCount = 0
+mersennePrimeCount = 0
+twinPrimeCount = 0
+cousinPrimeCount = 0
+sexyPrimeCount = 0
+euclidPrimeCount = 0
 pythagoreanPrimeCount = 0
 Mersenne_Primes = []
 Euclid_Primes = []
