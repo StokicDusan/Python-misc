@@ -35,19 +35,18 @@ class Stopwatch:
 
 
 def TCS(yy):
-    global pythagoreanPrimeCount, twinPrimeCount
-    global cousinPrimeCount, sexyPrimeCount, prime, mmm
+    global nonprimes
+    global allPrimeCount, pythagoreanPrimeCount, twinPrimeCount
+    global cousinPrimeCount, sexyPrimeCount
     if (yy-1)/4 == ((yy-1)/4)//1:
         pythagoreanPrimeCount += 1
-    for r in prime:
-        if yy-r == 2:
+    if (yy+2<=int(sys.argv[2]) and not nonprimes[yy] and not nonprimes[yy+2]):
             twinPrimeCount += 1
-        elif yy-r == 4:
+    if (yy+4<=int(sys.argv[2]) and not nonprimes[yy] and not nonprimes[yy+4]):
             cousinPrimeCount += 1
-        elif yy-r == 6:
+    if (yy+6<=int(sys.argv[2]) and not nonprimes[yy] and not nonprimes[yy+6]):
             sexyPrimeCount += 1
-    prime[mmm % 3] = yy
-    mmm += 1
+
 
 
 def mersenne(yy):
@@ -67,23 +66,20 @@ def mersenne(yy):
 
 
 def count(pr: int, max_value: int) -> int:
-    global allPrimeCount, timer
+    global allPrimeCount, nonprimes, timer
     timer.start()
     nonprimes = max_value * [False]
     nonprimes[0] = nonprimes[1] = True
-    if pr == 1:
-        for i in range(2, max_value):
-            if not nonprimes[i]:
-                for j in range(2*i, max_value, i):
-                    nonprimes[j] = True
+    for i in range(2, max_value):
+        if not nonprimes[i]:
+            for j in range(2*i, max_value, i):
+                nonprimes[j] = True
     if pr == 2 or pr == 3:
         for i in range(2, max_value):
             if not nonprimes[i]:
                 allPrimeCount += 1
                 TCS(i)
                 mersenne(i)
-                for j in range(2*i, max_value, i):
-                    nonprimes[j] = True
     timer.stop()
     if pr == 1 or pr == 3:
         k = 0
@@ -132,15 +128,13 @@ def main(argv1, argv2):
     if int(argv1) == 2 or int(argv1) == 3:
         display(n)
 
-
+nonprimes=0
 allPrimeCount=0
 mersennePrimeCount=0
 twinPrimeCount=0
 cousinPrimeCount=0
 sexyPrimeCount=0
-mmm=0
 pythagoreanPrimeCount = 0
-prime = [3, 5, 7]
 Mersenne_Primes = []
 timer = Stopwatch()
 
