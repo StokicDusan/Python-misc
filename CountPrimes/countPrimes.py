@@ -47,7 +47,19 @@ def TCS(yy):
     if (yy+6<=int(sys.argv[2]) and not nonprimes[yy] and not nonprimes[yy+6]):
             sexyPrimeCount += 1
 
-
+def euclid(yy):
+    global euclidPrimeCount, Euclid_Primes, nonprimes
+    product = 1
+    i = 2
+    while (product < yy) :
+        if not nonprimes[i]:
+            product = product * i
+        if (product + 1 == yy):
+            if yy not in Euclid_Primes:
+                euclidPrimeCount+=1
+                Euclid_Primes += [yy]
+                return True
+        i += 1
 
 def mersenne(yy):
     global mersennePrimeCount, Mersenne_Primes
@@ -80,6 +92,7 @@ def count(pr: int, max_value: int) -> int:
                 allPrimeCount += 1
                 TCS(i)
                 mersenne(i)
+                euclid(i)
     timer.stop()
     if pr == 1 or pr == 3:
         k = 0
@@ -108,11 +121,16 @@ def test_main():
 def display(n):
     global allPrimeCount, mersennePrimeCount, Mersenne_Primes
     global twinPrimeCount, cousinPrimeCount
-    global sexyPrimeCount, pythagoreanPrimeCount, timer
+    global sexyPrimeCount, pythagoreanPrimeCount
+    global euclidPrimeCount, Euclid_Primes, timer
     print('There are', f'{allPrimeCount:,}', 'Primes!!!!')
     print('%.3f' % (allPrimeCount*100/n), '% are Primes', sep="")
     print('There are', f'{mersennePrimeCount:,}', 'Mersenne Primes { Mp=2**p-1 }', end=": ")
     for i in Mersenne_Primes:
+        print(i, end=" ")
+    print()
+    print('There are', f'{euclidPrimeCount:,}', 'Euclid Primes { Ep=pn#+1 }', end=": ")
+    for i in Euclid_Primes:
         print(i, end=" ")
     print()
     print('There are', f'{twinPrimeCount:,}', 'Twin Primes')
@@ -134,8 +152,10 @@ mersennePrimeCount=0
 twinPrimeCount=0
 cousinPrimeCount=0
 sexyPrimeCount=0
+euclidPrimeCount=0
 pythagoreanPrimeCount = 0
 Mersenne_Primes = []
+Euclid_Primes = []
 timer = Stopwatch()
 
 
