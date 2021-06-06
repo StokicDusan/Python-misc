@@ -9,7 +9,7 @@
 This is a repository of miscellaneous scripts implemented in Python
 All algorithms are written by me while learning to code in Python or as a coding challenge while I was in my student years.
 
-These implementations are for learning purposes only. Therefore they may be less efficient than the implementations in the Python standard library.
+These implementations are for learning purposes only. Therefore they may be less efficient than the implementations in the Python standard libraries.
 
 I am putting these scripts up as exemplars for learning Python or as inspirations for someones future projects.
 
