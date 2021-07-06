@@ -6,9 +6,10 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 # Welcome to GitHub Python-misc!
-This is a repository of miscellaneous scripts implemented in Python3.
-I'm putting these scripts up as exemplars for learning Python or as inspirations for someones future projects.
-These implementations are for learning purposes only. Therefore they may be less efficient than the implementations in the Python standard libraries.
+This is a repository of miscellaneous scripts implemented in Python3.  
+
+I'm putting these scripts up as exemplars for learning Python or as inspiration for someones future projects.
+They may be less efficient than the implementations in the Python standard libraries.
 
 Provide Feedback
 ================
