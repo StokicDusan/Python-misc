@@ -38,8 +38,8 @@ def test_lucas_numbers():
 
     >>> lucas_numbers_last(3)
     3
-    >>> lucas_numbers_last(15)
-    843
+    >>> lucas_numbers_last(7)
+    18
     >>> lucas_numbers_last(45)
     1568397607
     """
