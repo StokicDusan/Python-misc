@@ -12,8 +12,7 @@ This is a repository of miscellaneous algorithms and scripts implemented in Pyth
 I'm putting these scripts up as exemplars for learning Python or as inspiration for someones future projects.
 They may be less efficient than the implementations in the Python standard libraries.
 
-Provide Feedback
-================
+## Provide Feedback
 
 If you encounter any bugs or have suggestions, please file an issue in the
 [Issues](https://github.com/StokicDusan/Python-misc/issues)
