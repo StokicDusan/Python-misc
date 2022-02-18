@@ -13,3 +13,7 @@ The OVSF codes can also be defined recursively by a tree structure, as shown in 
 Running VolsovoStablo.py you choose to save the codes in a text file or print it in the terminal. After the first option, you are presented with choosing the spread factor.  
 Spreading factor (SF): Positive integer that is a power of 2, specifying the length of the code.
 
+## Example
+Following picture shows an example of running the script:
+
+![ovsf-example](/OVSFCode/example1.png) 
